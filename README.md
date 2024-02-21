@@ -1,8 +1,6 @@
-# React + Vite
+# React Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Reference Link:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. [https://dev.to/misszamzam/a-simple-todo-list-app-with-react-1bj3]
+2. [https://dev.to/joelynn/how-to-build-a-react-crud-todo-app-edit-todo-46g6]

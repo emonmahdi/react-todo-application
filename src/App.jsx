@@ -1,8 +1,17 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
+import deleteImg from "../src/assets/delete.png";
+import editImg from "../src/assets/edit.png";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos");
+    if (savedTodos) {
+      return JSON.parse(savedTodos);
+    } else {
+      return [];
+    }
+  });
   const [inputValue, setInputValue] = useState("");
 
   const [editingIndex, setEditingIndex] = useState(null);
@@ -65,6 +74,8 @@ function App() {
                 fontSize: "16px",
                 margin: "0 10px",
                 borderRadius: "5px",
+                width: "275px",
+                marginLeft: "50px",
               }}
             />
             <button
@@ -92,7 +103,7 @@ function App() {
                 key={index}
                 style={{
                   listStyle: "none",
-                  margin: "10px 15px",
+                  margin: "10px 0px",
                   background: "black",
                   color: "white",
                   display: "flex",
@@ -100,6 +111,7 @@ function App() {
                   alignItems: "center",
                   padding: "10px 20px",
                   borderRadius: "5px",
+                  width: "400px",
                 }}
               >
                 {todo}
@@ -116,7 +128,7 @@ function App() {
                       cursor: "pointer",
                     }}
                   >
-                    Delete
+                    <img src={deleteImg} width={15} height={15} alt="" />
                   </button>
                   <button
                     onClick={() => handleUpdate(index)}
@@ -130,7 +142,7 @@ function App() {
                       cursor: "pointer",
                     }}
                   >
-                    Update
+                    <img src={editImg} width={15} height={15} alt="" />
                   </button>
                 </div>
               </li>
